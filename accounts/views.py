@@ -7,8 +7,8 @@ from .forms import RegistrationForm
 
 # Create your views here.
 
-def index(request):
-    return render(request, 'accounts/index.html')
+# def index(request):
+#     return render(request, 'accounts/index.html')
 
 
 def register(request):
