@@ -4,26 +4,41 @@
 
 {% block content %}
 
+<section id="register">
+    <div class="register-container">
+        <h1>Sign Up for a new Account!</h1>
+      </div>
+</section>
+
 <div class="container">
-    <h2>Sign up</h2>
-    <form method ="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4" >Register Now</legend>
-            {{ form | crispy }}
-        </fieldset>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">Sign Up</button>
-            <button type="reset" class="btn btn-primary">Reset</button>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card mt-4">
+                <div class="card-body p-4">
+                    <form method ="POST">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            <h1 class="fs-4 card-title fw-bold mb-4 text-center">Join Alpine Tours Today</h1>
+                            {{ form|crispy }}
+                        </fieldset>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                            <button type="reset" class="btn btn-primary">Reset</button>
+                        </div>
+                    </form>
+                </div>
+                    <div class="card-footer py-3 border-0">
+                        <div class="text-center">
+                            Already a member?
+                            <a href="{% url 'login' %}">Sign In</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </form>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            Already Have an Account?
-            <a href="{% url 'login' %}">Sign In</a>
-        </small>
     </div>
-</div>
+
 
 
 {% endblock content %}

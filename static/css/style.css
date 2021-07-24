@@ -18,7 +18,7 @@ a{
 }
 
 
-
+/* homepage css */
 
 #hero {
   width: 100%;
@@ -66,38 +66,130 @@ a{
 
 
 #hero .btn-get-started {
-  font-family: "Open Sans", sans-serif;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
   display: inline-block;
-  padding: 10px 35px 10px 35px;
+  padding: 11px 38px 11px 38px;
   border-radius: 4px;
   transition: 0.5s;
   color: #fff;
-  border: 2px solid #fff;
+  border: 2px solid #13293D;
+  background: #13293D;
 }
 
 #hero .btn-get-started:hover {
   border-color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(146, 145, 145, 0.1);
+}
+
+/* register css */
+
+#register {
+  width: 100%;
+  height: 75vh;
+  background-image: url("../image/mistymountain.jpg");
+  background-size: cover;
+  position: relative;
+  padding: 0;
+}
+
+#register:before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 
+#register .register-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#register h1 {
+  font-size: 54px;
+  font-weight: 200;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+}
+
+/* login css */
+
+#login {
+  width: 100%;
+  height: 75vh;
+  background-image: url("../image/gate.jpg");
+  background-size: cover;
+  position: relative;
+  padding: 0;
+}
+
+#login:before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6));
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
+#login .login-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#login h1 {
+  font-size: 56px;
+  font-weight: 200;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+}
+
+#login h2 {
+  color: #eee;
+  font-size: 24px;
+}
 
 @media (max-width: 768px) {
+
+  nav.navbar {
+    background: #000;
+  }
+
   #hero h1 {
-    font-size: 28px;
+    font-size: 34px;
     line-height: 48px;
   }
   
-}
-
-
-@media (max-width: 768px) {
-    nav.navbar {
-      background: #000;
-    }
-
-    
+  #register h1 {
+    font-size: 28px;
   }
+  #login h1 {
+    font-size: 28px;
+  }
+  #login h2 {
+    font-size: 18px;
+  }
+}
