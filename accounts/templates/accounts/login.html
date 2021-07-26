@@ -21,6 +21,7 @@
                     <form method ="POST">
                         {% csrf_token %}
                         <fieldset class="form-group">
+                            {% include 'messages.html'%}
                             <h1 class="fs-4 card-title fw-bold mb-4">Log In</h1>
                             {{ form|crispy }}
                         </fieldset>
