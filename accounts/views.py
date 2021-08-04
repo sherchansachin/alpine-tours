@@ -35,7 +35,7 @@ def login_user(request):
             password = form.cleaned_data.get('password')
             if user is not None:
                 dj_login(request, user)
-                messages.info(request, f'You are now logged in as {username}')
+                # messages.info(request, f'You are now logged in as {username}')
                 return redirect('index')
             # if form is not valid
         else:
@@ -48,4 +48,4 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     messages.info(request, f'Logged out successfully!')
-    return redirect('index')
+    return redirect('login')
