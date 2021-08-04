@@ -1,7 +1,7 @@
  <!-- flash message -->
     {% if messages %}
         {% for message in messages%}
-            <div class="alert py-2 mb-3 alert-{{ message.tags }}">
+            <div class="alert py-2 alert-{{ message.tags }}">
                 {{ message }}
             </div>
         {% endfor %}
