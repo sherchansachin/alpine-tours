@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<section id="package">
+    <div class="package-container">
+        <h1 class="mb-3">Exclusive Tour Packages</h1>
+        <h2>Find your next destination</h2>
+      </div>
+</section>
+
+
+
+<section class="main_heading my-5">
+  <div class="container">
+      <div class="text-left ">
+          <h1 class="display-6"> Available Trekking Packages </h1>
+          <hr class="w-100 mx-auto" />
+      </div>
+  </div>
+
+  <div class="container">
+      <div class="col-md-12">
+          <div class="row">
+              {% for package in packages %}
+              <div class="col-xs-12 col-sm-4 py-3">
+                  <div class="card">
+                      <img class="image-thumbail" src="{{package.image.url}}" alt="{{package.title}}">
+                      <div class="card-body">
+                          <h4 class="card-title">{{ package.package_title }}</h4>
+                          <p>Price : {{ package.price }} | Duration <i class="fa fa-clock-o" aria-hidden="true"></i>: {{ package.days }}</p>
+                          <a href="{% url 'package_info' package.slug  %}" class="btn btn-primary">Explore </a>
+                      </div>
+                  </div>
+              </div>
+              {% endfor %}
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+{% endblock content %}
