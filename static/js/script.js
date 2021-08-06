@@ -1,4 +1,4 @@
-const nav = document.querySelector('nav');
+const nav = document.querySelector('.normal-nav');
 window.addEventListener('scroll', function(){
     if(window.pageYOffset > 70){
         nav.classList.add('bg-dark', 'shadow');
