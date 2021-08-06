@@ -13,5 +13,5 @@ def packages(request):
     return render(request, 'main/packages.html', {"packages":packages})
 
 def package_detail(request, slug):
-    info = get_object_or_404(Packages, slug=slug)
+    info = get_object_or_404(Packages.objects.all(), slug=slug)
     return render(request, 'main/package_info.html', {'info':info})
