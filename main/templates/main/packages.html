@@ -1,8 +1,6 @@
 {% extends 'base.html' %}
-
-
 {% block content %}
-
+{% include 'normal-navbar.html' %}
 
 <section id="package">
     <div class="package-container">
@@ -10,8 +8,6 @@
         <h2>Find your next destination</h2>
       </div>
 </section>
-
-
 
 <section class="main_heading my-5">
   <div class="container">
@@ -21,25 +17,28 @@
       </div>
   </div>
 
+<!-- packages description -->
   <div class="container">
-      <div class="col-md-12">
-          <div class="row">
-              {% for package in packages %}
-              <div class="col-xs-12 col-sm-4 py-3">
-                  <div class="card">
-                      <img class="image-thumbail" src="{{package.image.url}}" alt="{{package.title}}">
-                      <div class="card-body">
-                          <h4 class="card-title">{{ package.package_title }}</h4>
-                          <p>Price : {{ package.price }} | Duration <i class="fa fa-clock-o" aria-hidden="true"></i>: {{ package.days }}</p>
-                          <a href="{% url 'package_info' package.slug  %}" class="btn btn-primary">Explore </a>
-                      </div>
-                  </div>
-              </div>
-              {% endfor %}
+      <div class="row">
+        {% for package in packages %}
+          <div class="col-lg-5">
+            <img class="img-fluid" src="{{package.image.url}}" alt="{{package.title}}">
           </div>
+          <div class="col-lg-7 px-5 py-2">
+              <h2>{{ package.package_title}}</h2>
+              <p class="text-muted mb-4">{{ package.slug }}</p>
+              <p >{{ package.description|safe|slice:":200"}}...</p>
+              <p class="mt-4"><i style="padding-right:20px;" class="far fa-calendar-alt fa-lg"></i> <strong>{{ package.days}}</strong>  </p>
+              <h3>Price: <mark>${{ package.price}}</mark></h3>
+              <a href="{% url 'package_info' package.slug  %}" class="btn btn-primary mt-4">View Package </a>
+          </div>
+          <hr class="my-5">
+        {% endfor %}
       </div>
   </div>
 </section>
+  
+
 
 
 
