@@ -1,3 +1,4 @@
+
 a{
   text-decoration: none;
 }
@@ -13,64 +14,48 @@ a{
 }
 
 .nav-link{
-  font-size: 18px;
+  font-size: 16px;
   color: #fff!important;
+}
+
+.log-btn{
+  border: 1px solid #eee;
 }
 
 
 /* homepage css */
 
-#hero {
-  width: 100%;
-  height: 100vh;
-  background-image: url("../image/front.png");
+.hero {
+  background-image: url("../image/gokyofront.png");
   background-size: cover;
+  background-position: center;
+	background-repeat: no-repeat;
+  height: 100vh;
   position: relative;
-  padding: 0;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
 }
 
-#hero:before {
-  content: "";
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-#hero .hero-container {
-  position: absolute;
-  bottom: 8%;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-#hero h1 {
-  letter-spacing: 4px;
+.hero h1 {
+  letter-spacing: 1px;
   font-size: 64px;
   font-weight: bold;
-  font-family: 'Lato', sans-serif;
-  line-height: 90px;
-  text-transform: uppercase;
-  margin-bottom: 50px;
-  color: #fff;
+  line-height: 86px;
+}
+
+.para{
+  width: 50%;
+  font-weight: 300;
+  font-size: 16px;
 }
 
 
-
-#hero .btn-get-started {
+.hero .btn-get-started {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 16px;
   display: inline-block;
-  padding: 11px 38px 11px 38px;
+  padding: 10px 30px;
   border-radius: 4px;
   transition: 0.5s;
   color: #fff;
@@ -78,9 +63,27 @@ a{
   background: #13293D;
 }
 
-#hero .btn-get-started:hover {
+.hero .btn-get-started:hover {
   border-color: #fff;
   background: rgba(146, 145, 145, 0.1);
+}
+
+@media (max-width: 768px) {
+
+  nav.navbar {
+    background: #000;
+  }
+}
+
+  @media (max-width: 600px) {
+  .hero h1 {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .para{
+    width: 100%;
+  }
 }
 
 /* register css */
@@ -88,7 +91,7 @@ a{
 #register {
   width: 100%;
   height: 75vh;
-  background-image: url("../image/mistymountain.jpg");
+  background-image: url("../image/gandruk.jpg");
   background-size: cover;
   position: relative;
   padding: 0;
@@ -123,6 +126,12 @@ a{
   font-weight: 200;
   font-family: 'Lato', sans-serif;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+    #register h1 {
+    font-size: 28px;
+  }
 }
 
 /* login css */
@@ -174,22 +183,120 @@ a{
 
 @media (max-width: 768px) {
 
-  nav.navbar {
-    background: #000;
-  }
-
-  #hero h1 {
-    font-size: 34px;
-    line-height: 48px;
-  }
-  
-  #register h1 {
-    font-size: 28px;
-  }
   #login h1 {
     font-size: 28px;
   }
   #login h2 {
     font-size: 18px;
-  }
+  } 
 }
+
+
+#package {
+  width: 100%;
+  height: 75vh;
+  background-image: url("../image/package.jpg");
+  background-size: cover;
+  position: relative;
+  padding: 0;
+}
+
+#package:before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6));
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#package .package-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#package h1 {
+  font-size: 56px;
+  font-weight: 200;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+}
+
+#package h2 {
+  color: #eee;
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+
+  #package h1 {
+    font-size: 28px;
+  }
+  #package h2 {
+    font-size: 18px;
+  } 
+}
+
+#package-detail {
+  width: 100%;
+  height: 50vh;
+  background-image: url("../image/front-2.jpg");
+  background-size: cover;
+  position: relative;
+  padding: 0;
+}
+
+#package-detail:before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6));
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#package-detail .packageD-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#package-detail h1 {
+  font-size: 56px;
+  font-weight: 200;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+}
+
+#package-detail h2 {
+  color: #eee;
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+
+  #package-detail h1 {
+    font-size: 28px;
+  }
+  #package-detail h2 {
+    font-size: 18px;
+  } 
+}
+
