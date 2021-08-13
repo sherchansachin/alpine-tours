@@ -1,16 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
-{% include 'navbar.html' %}
+{% include 'normal-navbar.html' %}
 
 
-<div class="container py-4">
+<section id="package-detail">
+  <div class="packageD-container">
+      <h1 class="mb-3">Package Details</h1>
+      <!-- breadcrumbs here -->
+    </div>
+</section>
+
+
+<div class="container">
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-8 py-5">
             <h1>{{ info.package_title }}</h1>
             <img class="img-fluid" src="{{ info.image.url}}" alt="{{package.title}}">
             <p>{{ info.description|safe}}</p>
         </div>
-        
+
+        <div class="col-lg-4 py-5">
+          <div class="card mt-5">
+            <h5 class="card-header">Booking Details and Our Goals</h5>
+              <div class="card-body">
+                <p class="text-center">Some information before Booking</p><hr>
+                <ul>
+                    <li>No-hassle best price guarantee</li>
+                    <li>Instant online booking</li>
+                    <li>Group discount available</li>
+                    <li>Privacy protected</li>
+                    <li>Customer care available 24/7</li>
+                    <li>Hand-picked itineraries</li>
+                </ul>
+                <p class="card-text"> Learn more about our other best selling tour and trekking packages too from the Home page, Thank You!</p>
+              </div>
+          </div>
+        </div>   
     </div>
 </div>
 
