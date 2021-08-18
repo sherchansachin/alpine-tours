@@ -95,6 +95,7 @@ a{
   background-size: cover;
   position: relative;
   padding: 0;
+  font-family: 'Raleway', sans-serif;
 }
 
 #register:before {
@@ -124,7 +125,6 @@ a{
 #register h1 {
   font-size: 54px;
   font-weight: 200;
-  font-family: 'Lato', sans-serif;
   color: #fff;
 }
 
@@ -143,6 +143,7 @@ a{
   background-size: cover;
   position: relative;
   padding: 0;
+  font-family: 'Raleway', sans-serif;
 }
 
 #login:before {
@@ -172,7 +173,6 @@ a{
 #login h1 {
   font-size: 56px;
   font-weight: 200;
-  font-family: 'Lato', sans-serif;
   color: #fff;
 }
 
@@ -199,6 +199,7 @@ a{
   background-size: cover;
   position: relative;
   padding: 0;
+  font-family: 'Raleway', sans-serif;
 }
 
 #package:before {
@@ -227,7 +228,6 @@ a{
 #package h1 {
   font-size: 56px;
   font-weight: 200;
-  font-family: 'Lato', sans-serif;
   color: #fff;
 }
 
@@ -253,6 +253,7 @@ a{
   background-size: cover;
   position: relative;
   padding: 0;
+  font-family: 'Raleway', sans-serif;
 }
 
 #package-detail:before {
@@ -281,7 +282,6 @@ a{
 #package-detail h1 {
   font-size: 56px;
   font-weight: 200;
-  font-family: 'Lato', sans-serif;
   color: #fff;
 }
 
@@ -298,5 +298,69 @@ a{
   #package-detail h2 {
     font-size: 18px;
   } 
+}
+
+
+#contact {
+  width: 100%;
+  height: 75vh;
+  background-image: url("../image/contact.jpg");
+  background-size: cover;
+  position: relative;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+#contact:before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6));
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
+#contact .contact-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#contact h1 {
+  font-size: 56px;
+  font-weight: 200;
+  color: #fff;
+}
+
+.information h1{
+  font-family: 'Raleway', sans-serif;
+}
+
+.top-heading{
+  font-size: 26px;
+  border-left: 3px solid #13293D;
+  padding: 0.4em 0.4em;
+}
+
+.info{
+  font-size: 26px;
+}
+
+
+
+@media (max-width: 768px) {
+
+  #contact h1 {
+    font-size: 28px;
+  }
 }
 
