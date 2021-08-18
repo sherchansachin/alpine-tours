@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'normal-navbar.html' %}
+
+<section id="contact">
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+      </div>
+</section>
+
+<section class="contact-main">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-9 mt-4">
+            <div class="top-heading">
+              <h2 class="info">Let's get in touch</h2>
+            </div>
+            </div>
+          <div class="col-md-12 col-lg-3 mt-5">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Contact us</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+    </div>
+</section>
+
+<section class="information py-5">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-7 col-sm-6">
+            <h1 class="mb-5 mt-3">Contact Us</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <br>
+            <p><i class="fas fa-phone-alt"></i>TEL:  <strong>977- 9898989898</strong></p>
+            <p><i class="far fa-envelope"></i>Email:  <strong>Lorem, ipsum dolor@gmail.com</strong></p>
+            <p><i class="fas fa-bookmark"></i></i>Website:  <strong>Lorem ipsum dolor sit.</strong></p>
+          </div>
+          <div class="col-lg-5 col-sm-6">
+            <h1 class="mb-5 mt-3">Commercial Informations</h1>
+            <p>Lorem, ipsum dolor:<strong> 7:00 AM to 05:00 PM</strong></p>
+            <p>Lorem, ipsum dolor.<strong> Sunday-Friday</strong></p>
+          </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
