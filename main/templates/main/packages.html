@@ -29,7 +29,7 @@
               <p class="text-muted mb-4">{{ package.slug }}</p>
               <p >{{ package.description|safe|slice:":200"}}...</p>
               <p class="mt-4"><i style="padding-right:20px;" class="far fa-calendar-alt fa-lg"></i> <strong>{{ package.days}}</strong>  </p>
-              <h3>Price: <mark>${{ package.price}}</mark></h3>
+              <h3>Price: ${{ package.price}}</h3>
               <a href="{% url 'package_info' package.slug  %}" class="btn btn-primary mt-4">View Package </a>
           </div>
           <hr class="my-5">
