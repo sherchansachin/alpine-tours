@@ -15,7 +15,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 py-5">
-            <h1>{{ info.package_title }}</h1>
+            <h1>{{ info.package_title }}</h1><hr>
             <img class="img-fluid" src="{{ info.image.url}}" alt="{{package.title}}">
             <p>{{ info.description|safe}}</p>
 
@@ -42,7 +42,7 @@
           <div class="card mt-5">
             <h5 class="card-header">Booking Details and Our Goals</h5>
               <div class="card-body">
-                <p class="text-center">Some information before Booking</p><hr>
+                <p class="text-center">Why book with Alpine Tours?</p><hr>
                 <ul>
                     <li>No-hassle best price guarantee</li>
                     <li>Instant online booking</li>
@@ -51,7 +51,25 @@
                     <li>Customer care available 24/7</li>
                     <li>Hand-picked itineraries</li>
                 </ul>
-                <p class="card-text"> Learn more about our other best selling tour and trekking packages too from the Home page, Thank You!</p>
+              </div>
+          </div>
+
+          <div class="card mt-4">
+              <div class="card-body">
+                <h5 class="card-title">Trip Facts</h5><hr>
+                <div class="trip-facts">
+                  <ul>
+                    <li><strong>Duration</strong>: {{ info.days }} </li>
+                    <li><strong>Difficulty</strong>: {{ info.difficulty }} </li>
+                    <li><strong>Primary Activity</strong>: {{ info.activity }}</li>
+                    <li><strong>Max Elevation</strong>: {{ info.elevation }}</li>
+                  </ul>
+                  <hr>
+                  <h5 class="card-title">Trip route</h5>
+                  <p class="card-text">{{ info.route }}</p>
+                  <h5 class="card-title">Best Season</h5>
+                  <p class="card-text">{{ info.seasons }}</p>
+                </div>
               </div>
           </div>
         </div>   

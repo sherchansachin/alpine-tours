@@ -298,6 +298,10 @@ a{
   #package-detail h2 {
     font-size: 18px;
   } 
+
+  #package-detail{
+    height: 75vh;
+  }
 }
 
 
@@ -348,7 +352,7 @@ a{
 .top-heading{
   font-size: 26px;
   border-left: 3px solid #13293D;
-  padding: 0.4em 0.4em;
+  padding: 0.1em 0.4em;
 }
 
 .info{
@@ -364,3 +368,11 @@ a{
   }
 }
 
+.trip-facts ul{
+  padding: 0;
+  list-style-type:none;
+}
+
+.trip-facts ul li + li{
+  margin-top: 10px;
+}
