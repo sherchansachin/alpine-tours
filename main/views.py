@@ -1,7 +1,7 @@
 from main.models import Packages
 from django.shortcuts import render, get_object_or_404
 from .models import Packages
-from .forms import CommentForm
+from .forms import CommentForm, BookingtForm
 
 # Create your views here.
 
@@ -39,3 +39,10 @@ def package_detail(request, slug):
 
 def contact(request):
     return render(request, 'main/contact.html')
+
+def booking(request):
+
+    form = BookingtForm()
+
+        
+    return render(request, 'main/reqform.html', {'form': form})
