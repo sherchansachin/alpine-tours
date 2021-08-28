@@ -1,10 +1,11 @@
 from django.contrib import admin
 from django.contrib.admin.decorators import action
-from .models import Packages, Comment
+from .models import Packages, Comment, RequestForm
 # Register your models here.
 
 
 admin.site.register(Packages)
+admin.site.register(RequestForm)
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
