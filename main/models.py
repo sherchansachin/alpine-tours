@@ -1,13 +1,24 @@
 from decouple import Choices
+from django.core.exceptions import NON_FIELD_ERRORS
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.db.models.deletion import CASCADE
+from django.db.models.fields import EmailField
 from django.utils.translation import activate
 
 # Create your models here.
 PACKAGE_STATUS = (
     (0, 'Unavailable'),
     (1, 'Available')
+)
+
+NO_OF_PEOPLE = (
+    ("1", "1 person"),
+    ("2", "2 persons"),
+    ("3", "3 persons"),
+    ("4", "4 persons"),
+    ("5", "5 persons"),
+    ("6", "More than 5 persons")
 )
 
 class Packages(models.Model):
@@ -42,3 +53,14 @@ class Comment(models.Model):
 
     def __str__(self):
         return '{} posted a comment {}'.format(self.name, self.comment)
+
+class RequestForm(models.Model):
+    """ model for tour package request """
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=15, unique=True)
+    people = models.CharField(max_length=15, choices=NO_OF_PEOPLE)
+    package_name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return 'Tour package {} has been requested by {}'.format(self.package_name, self.name)
