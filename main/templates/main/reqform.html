@@ -29,6 +29,7 @@
         <div class="col-md-6">
                     <form method ="POST">
                         {% csrf_token %}
+                        {% include 'messages.html'%}
                         {{ form | crispy }}
                         <button type="submit" class="btn btn-primary">Book now</button>
                     </form>

@@ -7,8 +7,7 @@
 <section id="package-detail">
   <div class="packageD-container">
       <h1 class="mb-3">Package Details</h1>
-      <!-- breadcrumbs here -->
-    </div>
+  </div>
 </section>
 
 
@@ -39,22 +38,33 @@
        
 
         <div class="col-lg-4 py-5">
+
           <div class="card mt-5">
-            <h5 class="card-header">Booking Details and Our Goals</h5>
+            <div class="card-body">
+              <h3 class="card-title">${{info.price}} Per Person</h3>
+              <p class="mt-4"><i style="padding-right:10px;" class="far fa-calendar-alt fa-lg"></i> Duration: <strong>{{ info.days}}</strong>  </p>
+              {% if user.is_authenticated %}
+              <a href="{% url 'booking'%}" class="btn btn-primary mt-2 req">Book Now</a>
+              {% else %}
+              <a href="{% url 'login'%}" class="btn btn-primary mt-2 req">Log in to Book</a>
+              {% endif %}
+            </div>
+        </div>
+
+          <div class="card bg-light mt-4">
               <div class="card-body">
-                <p class="text-center">Why book with Alpine Tours?</p><hr>
+                <h5 class="card-title">Why book with Alpine Tours?</h5><hr>
                 <ul>
-                    <li>No-hassle best price guarantee</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
                     <li>Instant online booking</li>
-                    <li>Group discount available</li>
-                    <li>Privacy protected</li>
-                    <li>Customer care available 24/7</li>
-                    <li>Hand-picked itineraries</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Best in the Business</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
                 </ul>
               </div>
           </div>
 
-          <div class="card mt-4">
+          <div class="card bg-light mt-4">
               <div class="card-body">
                 <h5 class="card-title">Trip Facts</h5><hr>
                 <div class="trip-facts">
@@ -75,6 +85,8 @@
         </div>   
     </div>
 </div>
+
+
 
 
 <!-- booking/ enquiry template here -->
