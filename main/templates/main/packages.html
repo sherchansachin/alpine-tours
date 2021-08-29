@@ -48,6 +48,54 @@
       </div>
   </div>
 </section>
+
+<!-- Pagination -->
+<nav aria-label="Page navigation example">
+  {% if packages.has_other_pages %}
+  <ul class="mt-4 mb-4 pagination justify-content-center">
+    <!-- conditional to show whether the previous button should be activated or passive  -->
+    {% if packages.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ packages.previous_page_number }}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <a class="page-link" href="" aria-label="Previous">
+        <span>&laquo;</span>
+      </a>
+    </li>
+    {% endif %}
+    {% for page in packages.paginator.page_range %}
+    {% if packages.number == page %}
+    <li class="page-item active">
+      <a class="page-link" href="{{ page }}">
+        {{ page }}
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="?page={{ page }}">{{ page }}</a></li>
+    {% endif %}
+    {% endfor %}
+    <!-- conditional to display whether the next button should be activated or passive  -->
+    {% if packages.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ packages.next_page_number }}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <a class="page-link" href="" aria-label="Next">
+        <span>&raquo;</span>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+  {% endif %}
+</nav>
+</div>
   
 
 

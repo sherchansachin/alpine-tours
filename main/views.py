@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.shortcuts import redirect, render, get_object_or_404
 from .models import Packages
 from .forms import CommentForm, BookingForm
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 # Create your views here.
 
@@ -12,6 +13,19 @@ def index(request):
 
 def packages(request):
     packages = Packages.objects.all()
+
+    paginator = Paginator(packages, 3)
+    page_num = request.GET.get('page', 1)
+
+    try:
+        packages = paginator.page(page_num)
+
+    except PageNotAnInteger:
+        packages = paginator.page(1)
+        
+    except EmptyPage:
+        packages = paginator.page(paginator.num_pages)
+
     return render(request, 'main/packages.html', {"packages":packages})
 
 
