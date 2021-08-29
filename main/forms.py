@@ -9,7 +9,7 @@ class CommentForm(forms.ModelForm):
         fields = ('name', 'comment')
 
 
-class BookingtForm(forms.ModelForm):
+class BookingForm(forms.ModelForm):
     class Meta:
         model = RequestForm
         fields = ('name', 'email', 'phone', 'people', 'package_name')

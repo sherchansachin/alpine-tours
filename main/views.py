@@ -1,7 +1,8 @@
 from main.models import Packages
-from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
+from django.shortcuts import redirect, render, get_object_or_404
 from .models import Packages
-from .forms import CommentForm, BookingtForm
+from .forms import CommentForm, BookingForm
 
 # Create your views here.
 
@@ -41,8 +42,14 @@ def contact(request):
     return render(request, 'main/contact.html')
 
 def booking(request):
-
-    form = BookingtForm()
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your booking request has been send, we will contact you soon!')
+            return redirect('/book-package')
+    else:
+        form = BookingForm()
 
         
     return render(request, 'main/reqform.html', {'form': form})
