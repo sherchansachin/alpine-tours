@@ -10,30 +10,61 @@
   </div>
 </section>
 
+<section class="tours-main mb-4">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-9 mt-4">
+          <div class="top-heading">
+            <h2 class="info">Package Info</h2>
+          </div>
+          </div>
+        <div class="col-md-12 col-lg-3 mt-4">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'packages' %}">Tours</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{ info.package_title}}</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+  </div>
+</section>
+
 
 <div class="container">
     <div class="row">
         <div class="col-lg-8 py-5">
-            <h1>{{ info.package_title }}</h1><hr>
+            <h1 class>{{ info.package_title }}</h1><hr>
             <img class="img-fluid" src="{{ info.image.url}}" alt="{{package.title}}">
             <p>{{ info.description|safe}}</p>
-
-           
               {% with comments.count as total_comments %}
               <h4 class="mt-4">{{ total_comments }} comments</h4>
               <p> {% endwith %} {% for comment in comments %} </p>
                 <div class="single" style="padding: 10px;">
                   <p class="font-weight-bold">
-                    {{ comment.name }}
+                    {{ comment.name }} |
                     <span class=" text-muted font-weight-normal">
-                      {{ comment.created_on }}
+                      {{ comment.posted_on }}
                     </span>
                   </p>
                   {{ comment.comment}}
                 </div>
+                <hr>
           
             {% endfor %}
             <!-- comment form here -->
+            <div class="card-body">
+              {% include 'messages.html'%}
+              <div class="my-4">
+                <h3>Leave a comment</h3>
+                <form method="POST" style="margin-top: 1.3em;">
+                  {{ comment_form | crispy }}
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-primary  req">Submit</button>
+                </form>
+              </div>
+            </div>
         </div>
        
 
