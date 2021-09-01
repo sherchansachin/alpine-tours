@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static%}
+{% load crispy_forms_tags %}
 {% block content %}
 {% include 'normal-navbar.html' %}
 
@@ -13,6 +15,84 @@
     </div>
   </section>
 
+
+<div class="container mb-5">
+  <div class="mt-5 d-flex align-items-center justify-content-between mb-2">
+    <h2 class="fw-bold">Popular Tours</h2>
+    <a href="{% url 'packages'%}" class="btn btn-sm btn-primary d-inline-flex align-items-center">See all tours<i class="fas fa-arrow-right top-icon"></i></a>
+  </div>
+  <div class="col-md-12">
+      <div class="row">
+          {% for package in packages %}
+          <div class="col-xs-12 col-sm-4 py-3">
+              <div class="card">
+                <div class="card-text card-text-bottom-right card-text-dark"><i class="far fa-compass card-icon"></i>Adventure</div>
+                  <img class="image-thumbail" src="{{package.image.url}}" alt="{{ package.package_title}}">
+                  <div class="card-body">
+                      <h4 class="card-title fw-normal mb-3">{{ package.package_title }}</h4>
+                      <p>Price from <strong> $ {{package.price}}</strong></p>
+                      <a href="{% url 'package_info' package.slug  %}"  class="btn btn-outline-secondary">View Tour</a>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+  </div>
+</div>
+ 
+<!-- need admendments  -->
+<div class="about py-5">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-6">
+              <figure>
+                  <img src="{% static 'image/index-2.jpg'%}" class="img-fluid"  alt="People taking picture">
+              </figure>
+          </div>
+          <div class="col-lg-1"></div>
+          <div class="col-lg-5  about ">
+              <h1 class="mt-5 fw-bold mb-5">Book your Trip</h1>
+              <p class="fw-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ipsum obcaecati explicabo. Aut error id, ipsam veritatis alias recusandae quibusdam? Lorem ipsum dolor sit 
+                amet consectetur.</p>
+              <p class="fw-italic">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt dolore ipsum illo animi cum dolor possimus est dolorum, sequi eligendi?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio modi nemo qui suscipit laboriosam quaerat quas atque voluptates, velit nihil?
+              </p>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+<div class="contact py-5">
+  <div class="container">
+    <div class="contact-title text-center">
+      <h1 class="fw-bold">Contact us</h1><hr class="w-25 mx-auto">
+      <p class="fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, quo!</p>
+    </div>
+    <div class="row">
+      <div class="col-md-4 py-5">
+        <h2 class="py-5">Feel Free to contact us any time!</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque tempore minima debitis vitae, ipsa voluptas ratione odio quaerat quos voluptate.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, soluta. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum ullam, enim 
+          voluptatem et, eos consequuntur sit dignissimos praesentium perferendis explicabo porro facilis cumque neque minima?</p>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-6 mt-3 card card-body card-padding-botton shadow-sm bg-body">
+        {% include 'messages.html'%}
+        <div class="my-4">
+          <h3>Any queries? Get in touch</h3><hr>
+          <form method="POST" style="margin-top: 1.3em;">
+            {{ contactform | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary  req">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 {% endblock content %}
