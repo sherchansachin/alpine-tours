@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.admin.decorators import action
-from .models import Packages, Comment, RequestForm
+from .models import Contact, Packages, Comment, RequestForm
 # Register your models here.
 
 
@@ -16,4 +16,13 @@ class CommentAdmin(admin.ModelAdmin):
 
 
     def approve_comments(self, request, queryset):
+        queryset.update(active = True)
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'subject', 'message', 'created_on', 'active')
+    list_filter = ('active', 'created_on')
+    search_fields = ('name', 'email')
+
+    def approve_contact(self, request, queryset):
         queryset.update(active = True)

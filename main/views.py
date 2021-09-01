@@ -2,13 +2,27 @@ from main.models import Packages
 from django.contrib import messages
 from django.shortcuts import redirect, render, get_object_or_404
 from .models import Packages
-from .forms import CommentForm, BookingForm
+from .forms import CommentForm, BookingForm, ContactForm
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.urls import reverse
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'main/index.html')
+    packages = Packages.objects.all()[:3]
+    new_contact = None
+    if request.method == 'POST':
+        contactform = ContactForm(data=request.POST)
+        if contactform.is_valid():
+            new_contact = contactform.save(commit = False)
+            new_contact.save()
+            messages.success(request, 'We will reach out to you as soon as possible')
+            return redirect(reverse('index'))
+    else:
+        contactform = ContactForm()
+    return render(request, 'main/index.html',  {"packages":packages,
+                                               'new_contact': new_contact,
+                                               'contactform': contactform})
 
 
 def packages(request):
@@ -43,6 +57,8 @@ def package_detail(request, slug):
             new_comment.post = info
             # Save the comment to the database
             new_comment.save()
+            messages.success(request, 'Your comment is awaiting moderation!')
+            return redirect(reverse('package_info', args=[info.slug]))
     else:
         comment_form = CommentForm()
 
