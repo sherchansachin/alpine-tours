@@ -64,3 +64,18 @@ class RequestForm(models.Model):
 
     def __str__(self):
         return 'Tour package {} has been requested by {}'.format(self.package_name, self.name)
+
+class Contact(models.Model):
+    """ model for contact form """
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=50)
+    message = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=False)
+    
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return '{} reached with the subject {}'.format(self.name, self.subject)
